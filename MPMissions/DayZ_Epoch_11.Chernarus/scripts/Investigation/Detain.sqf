@@ -5,7 +5,7 @@ _isAlive = alive _newCiv;
 detach _newCiv;    // Just incase
 
 /////////////////////////////////////////////////////////////////////////////////////
-if(_dist < 10 && _isMan && _isAlive) then {
+if(_dist < 10 && _isMan && _isAlive && canbuild) then {
     // removing required...
     player removeMagazine"equip_cable_tie";
 
