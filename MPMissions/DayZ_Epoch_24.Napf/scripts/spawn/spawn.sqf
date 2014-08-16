@@ -94,7 +94,7 @@ if (spawnSelect == 40) exitWith {
 	_donorUID = (getPlayerUID player);
 	{if (_donorUID == _x) then {_donorBase = _forEachIndex;};} forEach donorListBase;
 	_position = donorListBases select _donorBase;
-	if (haloSelect == 1) then {player setPosATL [_position select 0,_position select 1,2000];[player,2000] spawn BIS_fnc_halo;} else {player setPosATL _position;};
+	if (haloSelect == 1) then {player setPosATL [_position select 0,_position select 1,1000];[player,1000] spawn BIS_fnc_halo;} else {player setPosATL _position;};
 };
 if (spawnSelect == 41) then {spawnSelect = floor (random 15)};
 
