@@ -1,2 +1,0 @@
-
-setviewdistance 250;

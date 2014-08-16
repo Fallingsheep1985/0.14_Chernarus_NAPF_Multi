@@ -1,166 +1,60 @@
-// an array of playerUIDs of players who are admins
-// these players can add/remove any weapon mods even if they dont have the parts
-DZE_WEAPON_MOD_ADMINS = [];
-
-// an array of classes that can be clicked on to check weapon mod inventory 
-// note:    backpacks are added by default to this list
-DZE_WEAPON_MOD_INV_CHECK_ITEMS = ["ItemToolbox"];
-
-// use the hint version of the weapon mod inventory? change to false if it conflicts with your debug monitor. */
-DZE_WEAPON_MOD_USE_HINT_INVENTORY = true;
-
-//  **DZE_WEAPON_MODS FORMAT**
-//  ```
-//  DZE_WEAPON_MODS = [
-//       [_attachment,_base,_upgrade],
-//       [_attachment,_base,_upgrade],
-//       [... more info here ...]
-//  ];
-//  ```
-//  
-//   parameter    | description                                                         |  type  | example
-//  --------------|---------------------------------------------------------------------|--------|--------
-//  _attachment   | the name of the weapon attachment                                   | string | "GP25 GL"
-//  _base         | the classname that the attachment is put on to                      | string | "AK_74"
-//  _upgrade      | the classname the item becomes after the attachment it put on       | string | "AK_74_GL"
-//
-// this is where the links are setup for the weapon mods
-DZE_WEAPON_MODS = [
-    ["GP25 GL"      ,"AK_74"                ,"AK_74_GL"             ],
-    ["Kobra Sight"  ,"AK_74_GL"             ,"AK_74_GL_kobra"       ],
-    
-    ["Stock"        ,"AK_47_S"              ,"AK_47_M"              ],
-
-    ["GP25 GL"      ,"AK_107_kobra"         ,"AK_107_GL_kobra"      ],
-    ["PSO Scope"    ,"AK_107_kobra"         ,"AK_107_pso"           ],
-    ["GP25 GL"      ,"AK_107_pso"           ,"AK_107_GL_pso"        ],
-    ["PSO Scope"    ,"AK_107_GL_kobra"      ,"AK_107_GL_pso"        ],
-    
-    ["Gold Paint"   ,"AKS_74"               ,"AKS_GOLD"             ],
-    ["Kobra Sight"  ,"AKS_74"               ,"AKS_74_kobra"         ],
-    ["Suppressor"   ,"AKS_74_kobra"         ,"AKS_74_UN_kobra"      ],
-    ["PSO Scope"    ,"AKS_74"               ,"AKS_74_pso"           ],
-    ["NV Scope"     ,"AKS_74"               ,"AKS_74_NSPU"          ],
-    ["Thermal Scope","AKS_74"               ,"AKS_74_GOSHAWK"       ],
-    
-    ["Thermal Scope","BAF_AS50_scoped_DZ"   ,"BAF_AS50_TWS"         ],
-    
-    ["M203 GL"      ,"BAF_L85A2_RIS_Holo"   ,"BAF_L85A2_UGL_Holo"   ],
-    ["SUSAT Sight"  ,"BAF_L85A2_RIS_Holo"   ,"BAF_L85A2_RIS_SUSAT"  ],
-    ["M203 GL"      ,"BAF_L85A2_RIS_SUSAT"  ,"BAF_L85A2_UGL_SUSAT"  ],
-    ["SUSAT Sight"  ,"BAF_L85A2_UGL_Holo"   ,"BAF_L85A2_UGL_SUSAT"  ],
-    ["ACOG Scope"   ,"BAF_L85A2_RIS_Holo"   ,"BAF_L85A2_RIS_ACOG"   ],
-    ["M203 GL"      ,"BAF_L85A2_RIS_ACOG"   ,"BAF_L85A2_UGL_ACOG"   ],
-    ["ACOG Scope"   ,"BAF_L85A2_UGL_Holo"   ,"BAF_L85A2_UGL_ACOG"   ],
-    ["Thermal Scope","BAF_L85A2_RIS_Holo"   ,"BAF_L85A2_RIS_CWS"    ],
-    
-    ["Suppressor"   ,"bizon"                ,"bizon_silenced"       ],
-    
-    ["NV Scope"     ,"FN_FAL"               ,"FN_FAL_ANPVS4"        ],
-    
-    ["Camo Paint"   ,"G36a"                 ,"G36A_camo"            ],
-    ["Camo Paint"   ,"G36C"                 ,"G36C_camo"            ],
-    ["Camo Paint"   ,"G36K"                 ,"G36K_camo"            ],
-    ["Suppressor"   ,"G36C"                 ,"G36_C_SD_eotech"      ],
-    ["Camo Paint"   ,"G36_C_SD_eotech"      ,"G36_C_SD_camo"        ],
-  
-    ["Thermal Scope","M107_DZ"              ,"m107_TWS_EP1_DZ"      ],
-        
-    ["M203 GL"      ,"M16A2"                ,"M16A2GL"              ],
-
-    ["ACOG Scope"   ,"m16a4"                ,"m16a4_acg"            ],
-    ["M203 GL"      ,"m16a4"                ,"M16A4_GL"             ],
-    ["M203 GL"      ,"m16a4_acg"            ,"M16A4_ACG_GL"         ],
-    ["ACOG Scope"   ,"M16A4_GL"             ,"M16A4_ACG_GL"         ],
-        
-    ["Desert Paint" ,"M24"                  ,"M24_des_EP1"          ],
-    
-    ["ACOG Scope"   ,"M240_DZ"              ,"m240_scoped_EP1_DZE"  ],
-    
-    ["ACOG Scope"   ,"M249_EP1_DZ"          ,"M249_m145_EP1_DZE"    ],
-    ["Thermal Scope","M249_EP1_DZ"          ,"M249_TWS_EP1"         ],
-    
-    ["Thermal Scope","M249_EP1_DZ"          ,"M249_TWS_EP1"         ],
-    
-    ["CCO Sight"    ,"M4A1"                 ,"M4A1_Aim"             ],
-    ["Camo Paint"   ,"M4A1_Aim"             ,"M4A1_Aim_camo"        ],
-    ["ACOG Scope"   ,"M4A1"                 ,"M4SPR"                ],
-    ["M203 GL"      ,"M4A1"                 ,"M4A1_HWS_GL"          ],
-    ["ACOG Scope"   ,"M4A1_HWS_GL"          ,"M4A1_RCO_GL"          ],
-    ["M203 GL"      ,"M4SPR"                ,"M4A1_RCO_GL"          ],
-    ["Suppressor"   ,"M4A1_Aim_camo"        ,"M4A1_AIM_SD_camo"     ],
-    ["Camo Paint"   ,"M4A1_HWS_GL"          ,"M4A1_HWS_GL_camo"     ],
-    ["Suppressor"   ,"M4A1_HWS_GL_camo"     ,"M4A1_HWS_GL_SD_Camo"  ],
-    
-    ["M203 GL"      ,"m8_carbine"           ,"m8_carbineGL"         ],
-    ["ACOG Scope"   ,"m8_carbine"           ,"m8_sharpshooter"      ],
-    ["Thermal Scope","m8_carbine"           ,"m8_tws"               ],
-    ["Suppressor"   ,"m8_tws"               ,"m8_tws_sd"            ],
-        
-    ["CCO Sight"    ,"m8_compact"           ,"m8_compact_pmc"       ],
-    ["Suppressor"   ,"m8_compact_pmc"       ,"m8_holo_sd"           ],
- 
-    ["Suppressor"   ,"M9"                   ,"M9SD"                 ],
-    
-    ["Suppressor"   ,"Makarov"              ,"MakarovSD"            ],
-
-    ["Camo Paint"   ,"MG36"                 ,"MG36_camo_Large"      ],
- 
-    ["Desert Paint" ,"MK_48_DZ"             ,"Mk_48_DES_EP1"        ],
-    
-    ["Suppressor"   ,"MP5A5"                ,"MP5SD"                ],   
-
-    ["Gold Paint"   ,"revolver_EP1"         ,"revolver_gold_EP1"    ],  
-    
-    ["Stock"        ,"Sa58V_EP1"             ,"Sa58P_EP1"           ],
-    ["ACOG Scope"   ,"Sa58V_EP1"             ,"Sa58V_RCO_EP1"       ],
-    ["CCO Sight"    ,"Sa58V_EP1"             ,"Sa58V_CCO_EP1"       ],
-
-    ["Suppressor"   ,"SCAR_H_CQC_CCO"        ,"SCAR_H_CQC_CCO_SD"   ],
-
-    ["Suppressor"   ,"SCAR_H_LNG_Sniper"     ,"SCAR_H_LNG_Sniper_SD"],
-
-    ["M203 GL"      ,"SCAR_L_CQC_Holo"       ,"SCAR_L_CQC_EGLM_Holo"],
-    ["ACOG Scope"   ,"SCAR_L_CQC_EGLM_Holo"  ,"SCAR_L_STD_EGLM_RCO" ],
-    ["Thermal Scope","SCAR_L_CQC_EGLM_Holo"  ,"SCAR_L_STD_EGLM_TWS" ],
-
-    ["Suppressor"   ,"UZI_EP1"               ,"UZI_SD_EP1"          ],
-
-    ["Camo Paint"   ,"SVD"                   ,"SVD_CAMO"            ],
-    ["Desert Paint" ,"SVD"                   ,"SVD_des_EP1"         ],
-    ["NV Scope"     ,"SVD"                   ,"SVD_NSPU_EP1"        ]
-];
-
-//  **DZE_WEAPON_MOD_COMBINE FORMAT**
-//  
-//  DZE_WEAPON_MOD_COMBINE = [
-//      [_combined,_attachments],
-//      [_combined,_attachments],
-//      [... more info here ...]
-//  ];
-//  
-//   parameter    | description                                                         |  type  | example
-//  --------------|---------------------------------------------------------------------|--------|--------
-//  _combined     | the name of the attachment to combine the other attachments into    | string | "CCO Sight"
-//  _attachments  | array of attachments to combine into the combined attachment        | array  | ["Kobra Sight"]
-//  
-//   this is where you can combine groups of weapon mods into smaller groups (so mods are more compatible across weapons)
-DZE_WEAPON_MOD_COMBINE = [
-   ["G. Launcher",["M203 GL","GP25 GL"]],
-   ["CCO Sight",["SUSAT Sight","Kobra Sight"]],
-   ["ACOG Scope",["PSO Scope"]]
-];
-
-// these are the images used for the inventory dialog
-DZE_WEAPON_MOD_IMAGE_MAP = [
-    ["Suppressor","64Rnd_9x19_SD_Bizon"],
-    ["G. Launcher","1Rnd_HE_M203"],
-    ["CCO Sight","Binocular"],
-    ["ACOG Scope","Binocular_Vector"],
-    ["Thermal Scope","LaserDesignator"],
-    ["NV Scope","NVGoggles"],
-    ["Stock","ItemCore"],
-    ["Camo Paint","ItemCanvas"],
-    ["Desert Paint","ItemBurlap"],
-    ["Gold Paint","ItemGoldBar"]
-];
+//  DZE_CLICK_ACTIONS
+//      This is where you register your right-click actions
+//  FORMAT -- (no comma after last array entry)
+//      [_classname,_text,_execute,_condition],
+//  PARAMETERS
+//  _classname  : the name of the class to click on 
+//                  (example = "ItemBloodbag")
+//  _text       : the text for the option that is displayed when right clicking on the item 
+//                  (example = "Self Transfuse")
+//  _execute    : compiled code to execute when the option is selected 
+//                  (example = "execVM 'my\scripts\self_transfuse.sqf';")
+//  _condition  : compiled code evaluated to determine whether or not the option is displayed
+//                  (example = {true})
+//  EXAMPLE -- see below for some simple examples
+DZE_CLICK_ACTIONS = [
+	["ItemMachete","Clear Grass","[] execVM 'scripts\crafting\clearbrush.sqf';","true"],
+	["ItemKnife","Make Arrows","[] execVM 'scripts\crafting\makearrow.sqf';","true"],
+	["ItemKnife","Make Bandage","[] execVM 'scripts\crafting\makebandage.sqf';","true"],
+	["ItemToolbox","Make Knife","[] execVM 'scripts\crafting\makeknife.sqf';","true"],
+	["ItemToolbox","Make Bow","[] execVM 'scripts\crafting\makebow.sqf';","true"],
+	["ItemToolbox","Make Hatchet","[] execVM 'scripts\crafting\makehatchet.sqf';","true"],
+	["ItemZombieParts","Smear Zombie Guts on yourself","[] execVM 'scripts\walkamongstthedead\smear_guts.sqf';","true"],
+	["ItemWaterbottle","Wash off zombie gutss","[] execVM 'scripts\walkamongstthedead\usebottle.sqf';","true"],
+	["ItemBriefcase100oz","Call Carepackage (On Self)","[] execVM 'scripts\Carepackage\carepackage.sqf';","true"],
+	["ItemBriefcase100oz","Call Carepackage (On Map)","[] execVM 'scripts\Carepackage2\clickpackage.sqf';","true"],
+	["ItemKiloHemp","Smoke Weed","[] execVM 'scripts\HarvestHemp\smokeweed.sqf';","true"],
+	["ItemKnife","Harvest Weed","[] execVM 'scripts\HarvestHemp\hemp.sqf';","true"],
+	["ItemRadio","Group Management","[] execVM 'scripts\dzgm\loadGroupManagement.sqf';","true"],
+	["glock17_EP1","Suicide","[] execVM 'scripts\suicide\suicide_init.sqf';","true"],
+	["M9","Suicide","[] execVM 'scripts\suicide\suicide_init.sqf';","true"],
+	["M9SD","Suicide","[] execVM 'scripts\suicide\suicide_init.sqf';","true"],
+	["Makarov","Suicide","[] execVM 'scripts\suicide\suicide_init.sqf';","true"],
+	["MakarovSD","Suicide","[] execVM 'scripts\suicide\suicide_init.sqf';","true"],
+	["revolver_EP1","Suicide","[] execVM 'scripts\suicide\suicide_init.sqf';","true"],
+	["UZI_EP1","Suicide","[] execVM 'scripts\suicide\suicide_init.sqf';","true"],
+	["SA61_EP1","Suicide","[] execVM 'scripts\suicide\suicide_init.sqf';","true"],
+	["Colt1911_EP1","Suicide","[] execVM 'scripts\suicide\suicide_init.sqf';","true"],
+	["ItemToolbox","Deploy Bike","[] execVM 'scripts\spawnbike\deploy_init.sqf';","true"],
+	["Binocular","Set Fog - 500","[] execVM 'scripts\BinocularFog\500.sqf';","true"],
+	["Binocular","Set Fog - 750","[] execVM 'scripts\BinocularFog\750.sqf';","true"],
+	["Binocular","Set Fog - 1000","[] execVM 'scripts\BinocularFog\1000.sqf';","true"],
+	["Binocular","Set Fog - 1250","[] execVM 'scripts\BinocularFog\1250.sqf';","true"],
+	["Binocular","Set Fog - 1500","[] execVM 'scripts\BinocularFog\1500.sqf';","true"],
+	["Binocular","Set Fog - 1750","[] execVM 'scripts\BinocularFog\1750.sqf';","true"],
+	["Binocular","Set Fog - 2000","[] execVM 'scripts\BinocularFog\2000.sqf';","true"],
+	["Binocular","Set Fog - 2500","[] execVM 'scripts\BinocularFog\2500.sqf';","true"],
+	["Binocular","Set Fog - 3000","[] execVM 'scripts\BinocularFog\3000.sqf';","true"],
+	["Binocular","Set Fog - 3500","[] execVM 'scripts\BinocularFog\3500.sqf';","true"],
+	["Binocular","Set Fog - 4000","[] execVM 'scripts\BinocularFog\4000.sqf';","true"],
+	["Binocular","Set Fog - 4500","[] execVM 'scripts\BinocularFog\4500.sqf';","true"],
+	["Binocular","Set Fog - 5000","[] execVM 'scripts\BinocularFog\5000.sqf';","true"],
+	["ItemAmethyst","Start Crafting!","closeDialog 0;createDialog ""Advanced_Crafting"";[] execVM 'scripts\Buildables\Amethyst.sqf';","true"],
+	["ItemCitrine","Start Crafting!","closeDialog 0;createDialog ""Advanced_Crafting"";[] execVM 'scripts\Buildables\Citrine.sqf';","true"],
+	["ItemEmerald","Start Crafting!","closeDialog 0;createDialog ""Advanced_Crafting"";[] execVM 'scripts\Buildables\Emerald.sqf';","true"],
+	["ItemObsidian","Start Crafting!","closeDialog 0;createDialog ""Advanced_Crafting"";[] execVM 'scripts\Buildables\Obsidian.sqf';","true"],
+	["ItemRuby","Start Crafting!","closeDialog 0;createDialog ""Advanced_Crafting"";[] execVM 'scripts\Buildables\Ruby.sqf';","true"],
+	["ItemSapphire","Start Crafting!","closeDialog 0;createDialog ""Advanced_Crafting"";[] execVM 'scripts\Buildables\Sapphire.sqf';","true"],
+	["ItemTopaz","Start Crafting!","closeDialog 0;createDialog ""Advanced_Crafting"";[] execVM 'scripts\Buildables\Topaz.sqf';","true"],
+	["ItemLightbulb","Start Crafting!","closeDialog 0;createDialog ""Advanced_Crafting"";[] execVM 'scripts\Buildables\Lights.sqf';","true"]
+];                                               

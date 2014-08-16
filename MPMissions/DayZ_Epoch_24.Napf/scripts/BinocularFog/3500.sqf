@@ -1,0 +1,2 @@
+
+setviewdistance 3500;
