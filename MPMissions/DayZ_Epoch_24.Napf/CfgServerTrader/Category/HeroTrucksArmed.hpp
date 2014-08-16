@@ -1,8 +1,8 @@
 class Category_479 {
 	class ArmoredSUV_PMC_DZE {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemBriefcase100oz"};
-		sell[] = {1,"ItemBriefcase100oz"};
+		buy[] = {4,"ItemBriefcase100oz"};
+		sell[] = {2,"ItemBriefcase100oz"};
 	};
 	class Pickup_PK_TK_GUE_EP1_DZE {
 		type = "trade_any_vehicle";

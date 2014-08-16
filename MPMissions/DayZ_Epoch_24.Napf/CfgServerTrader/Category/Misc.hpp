@@ -1,4 +1,4 @@
-class Category_902 {
+class Category_952 {
 	class ItemRadio {
 		type = "trade_items";
 		buy[] = {2,"ItemGoldBar10oz"};

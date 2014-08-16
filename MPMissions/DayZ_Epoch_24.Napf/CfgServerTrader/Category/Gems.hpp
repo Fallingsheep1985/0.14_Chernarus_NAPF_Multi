@@ -1,4 +1,4 @@
-class Category_900 {
+class Category_951 {
 	class ItemRuby {
 		type = "trade_items";
 		buy[] = {8,"ItemGoldBar10oz"};

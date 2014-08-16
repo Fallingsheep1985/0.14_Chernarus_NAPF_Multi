@@ -1,8 +1,14 @@
-server_name = "0.14 - Napf";
+
 
 execVM "admintools\AdminList.sqf";
 execVM "scriptcontrol.sqf";
 
+
+if(Overpoch)then{
+server_name = "0.14 - Overpoch Napf";
+}else{
+server_name = "0.14 - Epoch Napf";
+};
 
 /*	
 	For DayZ Epoch
@@ -47,7 +53,7 @@ dayz_spawnInfectedSite_clutterCutter = 2; // Infected Base Settings / 0 =  loot 
 
 DZE_BuildOnRoads = true; // Default: False
 DZE_requireplot = 1;
-DZE_teleport = [14000,14000,14000,14000,14000];
+DZE_teleport = [26000,26000,26000,26000,26000];
 DZE_StaticConstructionCount = 1;
 DZE_FriendlySaving = true;
 DZE_TRADER_SPAWNMODE = false;
@@ -110,7 +116,11 @@ call compile preprocessFileLineNumbers "init\compiles.sqf";				//Compile regular
 call compile preprocessFileLineNumbers "init\compiles2.sqf";			//compile overrides
 call compile preprocessFileLineNumbers "scripts\Buildables\Crafting_Compiles.sqf"; //Alchemy compiles
 progressLoadingScreen 0.5;
-call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
+if(Overpoch)then{
+call compile preprocessFileLineNumbers "server_traders_overpoch.sqf";				//Compile trader configs
+}else{
+call compile preprocessFileLineNumbers "server_traders_epoch.sqf";
+};
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";

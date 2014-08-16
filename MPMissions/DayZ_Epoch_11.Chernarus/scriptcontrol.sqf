@@ -1,4 +1,10 @@
 //Script Control - Allows you to customize the repack by turning certain scripts on or off - true = on /false = off
+
+
+//Overpoch on (modifies loot and traders to seel/spawn overwatch items)
+Overpoch = true;
+
+
 //Admintools
 AdminScript = true;
 //CAGN Safezones

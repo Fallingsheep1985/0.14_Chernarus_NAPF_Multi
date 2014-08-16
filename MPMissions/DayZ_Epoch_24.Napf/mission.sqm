@@ -30,8 +30,8 @@ class Mission
 	randomSeed=11171215;
 	class Intel
 	{
-		briefingName="DayZ Epoch Napf";
-		briefingDescription="DayZ Epoch Napf";
+		briefingName="DayZ Napf";
+		briefingDescription="DayZ Napf";
 		startWeather=0.067362607;
 		forecastWeather=0.52341133;
 		year=2008;
@@ -1173,7 +1173,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=25;
+		items=23;
 		class Item0
 		{
 			position[]={10010.905,110.96082,10448.559};
@@ -1330,23 +1330,6 @@ class Mission
 			text="Trader city Emmen";
 			type="mil_circle";
 			colorName="ColorBlack";
-		};
-			class Item23
-		{
-			position[]={7018.75,304.99265,7653.63};
-			name="novyBank";
-			text="Central Bank of BSR";
-
-			type="mil_dot";
-			colorName="ColorOrange";
-		};
-		class Item24
-		{
-			position[]={6611.9756,304.99265,14201.991};
-			name="sectorfng";
-			text="Sector FNG";
-			type="mil_circle";
-			colorName="ColorRed";
 		};
 	};
 	class Sensors

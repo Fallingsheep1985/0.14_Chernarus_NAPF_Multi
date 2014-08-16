@@ -1,4 +1,9 @@
 class Category_663 {
+	class ItemRadio {
+		type = "trade_items";
+		buy[] = {2,"ItemGoldBar10oz"};
+		sell[] = {1,"ItemGoldBar10oz"};
+	};
 	class ItemCompass {
 		type = "trade_weapons";
 		buy[] = {6,"ItemSilverBar"};
@@ -86,6 +91,11 @@ class Category_663 {
 	};
 };
 class Category_510 {
+	class ItemRadio {
+		type = "trade_items";
+		buy[] = {2,"ItemGoldBar10oz"};
+		sell[] = {1,"ItemGoldBar10oz"};
+	};
 	class ItemCompass {
 		type = "trade_weapons";
 		buy[] = {6,"ItemSilverBar"};
