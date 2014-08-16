@@ -1,0 +1,11 @@
+GearAdd = (vehicle player);
+GearAdd addMagazine 'ItemComboLock';
+GearAdd addMagazine 'ItemComboLock';
+GearAdd addMagazine 'ItemComboLock';
+GearAdd addMagazine 'ItemComboLock';
+GearAdd addMagazine 'ItemComboLock';
+GearAdd addMagazine 'ItemComboLock';
+GearAdd addMagazine 'ItemComboLock';
+GearAdd addMagazine 'ItemComboLock';
+GearAdd addMagazine 'ItemComboLock';
+GearAdd addMagazine 'ItemComboLock';

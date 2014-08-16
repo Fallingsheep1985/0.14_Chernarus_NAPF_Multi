@@ -1,0 +1,11 @@
+GearAdd = (vehicle player);
+GearAdd addMagazine 'ItemBurlap';
+GearAdd addMagazine 'ItemBurlap';
+GearAdd addMagazine 'ItemBurlap';
+GearAdd addMagazine 'ItemBurlap';
+GearAdd addMagazine 'ItemBurlap';
+GearAdd addMagazine 'ItemBurlap';
+GearAdd addMagazine 'ItemBurlap';
+GearAdd addMagazine 'ItemBurlap';
+GearAdd addMagazine 'ItemBurlap';
+GearAdd addMagazine 'ItemBurlap';

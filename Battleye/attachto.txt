@@ -1,0 +1,5 @@
+//new
+1 "" !="VaultStorageLocked" !="LockboxStorageLocked" !="Hedgehog_DZ" !="Sandbag1_DZ" !="Fort_RazorWire" !="WoodGate_DZ" !="Land_HBarrier1_DZ"
+5 "Parachute"
+5 "VaultStorage" !"VaultStorageLocked"
+5 "LockboxStorage" !"LockboxStorageLocked"

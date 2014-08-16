@@ -1,0 +1,11 @@
+GearAdd = (vehicle player);
+GearAdd addMagazine 'ItemWire';
+GearAdd addMagazine 'ItemWire';
+GearAdd addMagazine 'ItemWire';
+GearAdd addMagazine 'ItemWire';
+GearAdd addMagazine 'ItemWire';
+GearAdd addMagazine 'ItemWire';
+GearAdd addMagazine 'ItemWire';
+GearAdd addMagazine 'ItemWire';
+GearAdd addMagazine 'ItemWire';
+GearAdd addMagazine 'ItemWire';

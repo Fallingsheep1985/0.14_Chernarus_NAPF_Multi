@@ -1,0 +1,11 @@
+GearAdd = (vehicle player);
+GearAdd addMagazine 'PartWoodPlywood';
+GearAdd addMagazine 'PartWoodPlywood';
+GearAdd addMagazine 'PartWoodPlywood';
+GearAdd addMagazine 'PartWoodPlywood';
+GearAdd addMagazine 'PartWoodPlywood';
+GearAdd addMagazine 'PartWoodPlywood';
+GearAdd addMagazine 'PartWoodPlywood';
+GearAdd addMagazine 'PartWoodPlywood';
+GearAdd addMagazine 'PartWoodPlywood';
+GearAdd addMagazine 'PartWoodPlywood';

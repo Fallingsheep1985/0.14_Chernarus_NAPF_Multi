@@ -1,0 +1,11 @@
+GearAdd = (vehicle player);
+GearAdd addMagazine 'ItemCanvas';
+GearAdd addMagazine 'ItemCanvas';
+GearAdd addMagazine 'ItemCanvas';
+GearAdd addMagazine 'ItemCanvas';
+GearAdd addMagazine 'ItemCanvas';
+GearAdd addMagazine 'ItemCanvas';
+GearAdd addMagazine 'ItemCanvas';
+GearAdd addMagazine 'ItemCanvas';
+GearAdd addMagazine 'ItemCanvas';
+GearAdd addMagazine 'ItemCanvas';

@@ -1,0 +1,569 @@
+class RscIGUIShortcutButton;
+#include "scripts\journal\CfgPlayerStats\defines.hpp"
+#include "scripts\journal\CfgPlayerStats\p__cover.hpp"
+#include "scripts\journal\CfgPlayerStats\p_journal_humanity.hpp"
+#include "scripts\journal\CfgPlayerStats\p_humanity_art.hpp"
+#include "scripts\journal\CfgPlayerStats\p_zombies_killed.hpp"
+#include "scripts\journal\CfgPlayerStats\p_bandits_killed.hpp"
+#include "scripts\journal\CfgPlayerStats\p_headshots.hpp"
+#include "scripts\journal\CfgPlayerStats\p_murders.hpp"
+
+//Infected Camps
+#include "scripts\InfectedCamps\CfgObjectCompositions.hpp"
+
+//Custom Loot
+#include "scripts\CustomLoot\CfgBuildingLoot.hpp"
+
+//Heli Lift
+#include "scripts\HeliLift\BTC_Hud.h"
+
+//HELP DIALOG
+#include "scripts\help\hlp_defines.hpp"
+#include "scripts\help\hlp_dialog.hpp"
+
+#include "defines.hpp"
+
+respawn = "BASE";
+respawndelay = 5;
+onLoadMission= "DayZ Epoch Chernarus";
+OnLoadIntro = "Welcome to DayZ Epoch Chernarus";
+OnLoadIntroTime = False;
+OnLoadMissionTime = False;
+disabledAI = true;
+disableChannels[]={0,2,6};
+enableItemsDropping = 0;
+
+briefing = 0;
+debriefing = 0;
+
+onPauseScript = "";
+loadScreen = "pictures\loadscreen.jpg";
+
+class Header
+{
+ gameType = COOP;            //DM, Team, Coop, ...
+ minPlayers = 1;             //min # of players the mission supports
+ maxPlayers = 100;            //Max # of players the mission supports
+};
+
+aiKills = 1;
+diagRadio = 1;
+diagHit = 1;
+
+class RscTextNS
+{
+    idc = -1;
+    type = 0;
+    style = 2;
+    LineSpacing = 1.0;
+    h = 0.04;
+    ColorBackground[] = {1,1,1,0.2};
+    ColorText[] = {0.1,0.1,0.1,1};
+    font = "BitStream";
+    SizeEx = 0.025;
+};
+class RscPictureGUI
+{
+	access=0;
+	type=0;
+	idc=-1;
+	colorBackground[]={0,0,0,0};
+	colorText[]={0.38,0.63,0.25999999,0.75};
+	font="TahomaB";
+	sizeEx=0;
+	lineSpacing=0;
+	text="";
+	style="0x30 + 0x100";
+	x=0;
+	y=0;
+	w=0.2;
+	h=0.15000001;
+};
+// the loading screen itself
+class DayZ_loadingScreen
+{ 
+	idd = -1;
+	duration = 10e10;
+	fadein = 0;
+	fadeout = 0;
+	name = "loading screen";
+	class controlsBackground
+	{
+		class blackBG : RscText
+		{
+			x = safezoneX;
+			y = safezoneY;
+			w = safezoneW;
+			h = safezoneH;
+			text = "";
+			colorText[] = {0,0,0,0};
+			colorBackground[] = {0,0,0,1};
+		};
+	};
+	class controls
+	{
+		class Title1 : RscLoadingText
+		{
+			text = "$STR_LOADING"; // "Loading" text in the middle of the screen
+		};
+		class CA_Progress : RscProgress // progress bar, has to have idc 104
+		{
+			idc = 104;
+			type = 8; // CT_PROGRESS
+			style = 0; // ST_SINGLE
+			texture = "\ca\ui\data\loadscreen_progressbar_ca.paa";
+		};
+		class CA_Progress2 : RscProgressNotFreeze // progress bar that will go reverse
+		{
+			idc = 103;
+		};
+		class Name2: RscText // the text on the top-left
+		{
+			idc = 101;
+			x = 0.05;
+			y = 0.029412;
+			w = 0.9;
+			h = 0.04902;
+			text = "";
+			sizeEx = 0.05;
+			colorText[] = {0.543,0.5742,0.4102,1.0};
+		};
+	};
+};
+#include "scripts\dzgm\defines.hpp"
+class RscTitles {
+#include "scripts\dzgm\icons.hpp"
+	class BTC_Hud
+	{
+		idd = 1000;
+		movingEnable=0;
+		duration=1e+011;
+		name = "BTC_Hud_Name";
+		onLoad = "uiNamespace setVariable [""HUD"", _this select 0];";
+		controlsBackground[] = {};
+		objects[] = {};
+		class controls 
+		{
+			class Radar
+			{
+				type = CT_STATIC;
+				idc = 1001;
+				style = ST_PICTURE;
+				x = (SafeZoneW+2*SafeZoneX) - 0.1;//safezonex + 0.1;//0.9
+				y = (SafeZoneH+2*SafeZoneY) - 0.15;//safezoney + 0.1;//0.85
+				w = 0.3;
+				h = 0.4;
+				font = "Zeppelin32";
+				sizeEx = 0.03;
+				colorBackground[] = {0, 0, 0, 0};
+				colorText[] = {1, 1, 1, 1};
+				text = "\ca\ui\data\igui_radar_air_ca.paa";
+			};
+			class Img_Obj
+			{
+				type = CT_STATIC;
+				idc = 1002;
+				style = ST_PICTURE;
+				x = (SafeZoneW+2*SafeZoneX) + 0.045;
+				y = (SafeZoneH+2*SafeZoneY) + 0.045;
+				w = 0.01;
+				h = 0.01;
+				font = "Zeppelin32";
+				sizeEx = 0.04;
+				colorBackground[] = {0, 0, 0, 0};
+				colorText[] = {1, 1, 1, 1};
+				text = "scripts\HeliLift\data\BTC_Obj.paa";
+			};
+			class Pic_Obj
+			{
+				type = CT_STATIC;
+				idc = 1003;
+				style = ST_PICTURE;
+				x = (SafeZoneW+2*SafeZoneX) - 0.125;
+				y = (SafeZoneH+2*SafeZoneY) - 0.23;
+				w = 0.1;
+				h = 0.1;
+				font = "Zeppelin32";
+				sizeEx = 0.03;
+				colorBackground[] = {0, 0, 0, 0};
+				colorText[] = {1, 1, 1, 1};
+				text = "";
+			};
+			class Arrow
+			{
+				type = CT_STATIC;
+				idc = 1004;
+				style = ST_PICTURE;
+				x = (SafeZoneW+2*SafeZoneX) + 0.15;
+				y = (SafeZoneH+2*SafeZoneY) - 0.15;
+				w = 0.05;
+				h = 0.05;
+				font = "Zeppelin32";
+				sizeEx = 0.03;
+				colorBackground[] = {0, 0, 0, 0};
+				colorText[] = {1, 1, 1, 1};
+				text = "";
+			};
+			class Type_Obj
+			{
+				type = CT_STATIC;
+				idc = 1005;
+				style = ST_LEFT;
+				x = (SafeZoneW+2*SafeZoneX) - 0.03;
+				y = (SafeZoneH+2*SafeZoneY) - 0.335;
+				w = 0.3;
+				h = 0.3;
+				font = "Zeppelin32";
+				sizeEx = 0.03;
+				colorBackground[] = {0, 0, 0, 0};
+				colorText[] = {1, 1, 1, 1};
+				text = "";
+			};
+		};   
+	};
+	class wm_disp {
+		idd = -1;
+		onLoad = "uiNamespace setVariable ['wm_disp', _this select 0]";
+		fadein = 0;
+		fadeout = 0;
+		duration = 10e10;
+		controlsBackground[] = {};
+		objects[] = {};
+		class controls {
+			class wm_text2 {
+				idc = 1;
+				x = safeZoneX+0.027;//safeZoneW*0.01;
+				y = safeZoneY+safeZoneH-0.16;
+				w = 1.151*safeZoneH;
+				h = 0.057*safeZoneH;
+				shadow = 2;
+				class Attributes
+				{
+					font = "EtelkaNarrowMediumPro";
+					color = "#24FFFFFF";
+					align = "left"; // put "center" here if you want some background
+					valign = "middle";
+					shadow = 2;
+				};
+				colorBackground[] = { 1, 0.3, 0, 0 };  // uncomment and increase 4th number to have a background
+				font = "EtelkaNarrowMediumPro";
+				size = 0.06*safeZoneH;
+				type = 13;
+				style = 0;
+				text="";
+			};
+		};
+	};
+	//Deathscreen
+	class DeathScr {
+		  idd = -1;
+		  movingEnable = 0;
+		  duration = 10;
+		  fadein = 2;
+		  fadeout = 2;
+		  name="DeathScr";
+		  controls[]={"Picture"};
+		  class Picture {
+			x = safezoneX; y = safezoneY; w = safezoneW; h = safezoneH;
+			text="pictures\deathscr.paa";
+			sizeEx = -1;
+			type=0;
+			idc=-1;
+			style=48;
+			colorBackground[]={0,0,0,0};
+			colorText[]={1,1,1,1};
+			font="Bitstream";
+		  };
+	};
+	class RscAPSI_h1
+    {
+        idd = -1;
+        duration = 4;
+        fadein = 0;
+        movingEnable = 0;
+        enableSimulation = 0;
+        enableDisplay = 0;
+        class controls
+        {
+            class APSILog: RscTextNS
+            {
+                x = 0.5;
+                y = 0.99;
+                w = 0.5;
+                h = 0.03;
+                text = "APSI: Stronger activity of floax field has been detected..";
+                colorBackground[] = {0.5,0.5,0.5,0.4};
+                ColorText[] = {1.0,0.2,0.1,1};
+            };
+        };
+    };
+    class RscAPSI_h2: RscAPSI_h1
+    {
+        class controls
+        {
+            class APSILog: RscTextNS
+            {
+                x = 0.5;
+                y = 0.99;
+                w = 0.4;
+                h = 0.03;
+                text = "APSI: EVR sequence detected..";
+                colorBackground[] = {0.5,0.5,0.5,0.4};
+                ColorText[] = {1.0,0.0,0.2,1};
+            };
+        };
+    };
+    class RscAPSI_h3: RscAPSI_h1
+    {
+        class controls
+        {
+            class APSILog: RscTextNS
+            {
+                x = 0.5;
+                y = 0.99;
+                w = 0.4;
+                h = 0.03;
+                text = "APSI: EM and PSI protection enabled..";
+                colorBackground[] = {0.5,0.5,0.5,0.4};
+                ColorText[] = {0.0,1.0,0.2,1};
+            };
+        };
+    };
+    class RscAPSI_h4: RscAPSI_h1
+    {
+        class controls
+        {
+            class APSILog: RscTextNS
+            {
+                x = 0.5;
+                y = 0.99;
+                w = 0.4;
+                h = 0.03;
+                text = "APSI: Ready..";
+                colorBackground[] = {0.5,0.5,0.5,0.4};
+                ColorText[] = {0.0,1.0,0.2,1};
+            };
+        };
+    };
+    class RscAPSI_h5: RscAPSI_h1
+    {
+        class controls
+        {
+            class APSILog: RscTextNS
+            {
+                x = 0.5;
+                y = 0.99;
+                w = 0.4;
+                h = 0.03;
+                text = "APSI: EVR sequence start..";
+                colorBackground[] = {0.5,0.5,0.5,0.4};
+                ColorText[] = {1.0,0.0,0.2,1};
+            };
+        };
+    };
+    class RscAPSI_h6: RscAPSI_h1
+    {
+        class controls
+        {
+            class APSILog: RscTextNS
+            {
+                x = 0.5;
+                y = 0.99;
+                w = 0.4;
+                h = 0.03;
+                text = "APSI: End of EVR..";
+                colorBackground[] = {0.5,0.5,0.5,0.4};
+                ColorText[] = {0.0,1.0,0.2,1};
+            };
+        };
+    };
+    class RscAPSI_ha: RscAPSI_h1
+    {
+        class controls
+        {
+            class APSILog: RscTextNS
+            {
+                x = 0.5;
+                y = 0.99;
+                w = 0.4;
+                h = 0.03;
+                text = "Blowout module, v1.0, by Sumrak.";
+                colorBackground[] = {0.5,0.5,0.5,0.4};
+                ColorText[] = {0.0,1.0,0.2,1};
+            };
+        };
+    };
+	class zCamoStatusGUI 
+	{
+		idd = -1;
+		fadeout=0;
+		fadein=0;
+		onLoad = "uiNamespace setVariable ['zCamo_GUI_display', _this select 0]";
+		duration = 10e10;
+		name= "zCamoGui";
+		controlsBackground[] = {};
+		objects[] = {};
+		class controls {
+			class zCamoIcon:RscPictureGUI {
+			idc = 1;
+			text="scripts\walkamongstthedead\zombie.paa";
+			x="0.958313 * safezoneW + safezoneX";
+			y="0.43 * safezoneH + safezoneY";
+			w=0.059999999;
+			h=0.079999998;
+			colorText[]={1,1,1,1};
+			};
+		};
+	};
+};
+class CfgSounds
+{	
+	class Vas_yessir;	
+	class horde_sound_turning_page: Vas_yessir
+	{
+		name = "horde_sound_turning_page";
+		sound[] = {"sounds\page.ogg", 0.5, 1};
+		titles[] = {};
+	};
+	class horde_sound_close_book: Vas_yessir
+	{
+		name = "horde_sound_close_book";
+		sound[] = {"sounds\close.ogg", 1, 1};
+		titles[] = {};
+	};
+	class bl_begin
+	{
+		name = "NS blowout_begin";
+		sound[] = {"scripts\blowout\sounds\blowout_begin.ogg",3.162278,1.0};
+		titles[] = {};
+	};
+	class bl_hit1
+	{
+		name = "NS blowout_begin";
+		sound[] = {"scripts\blowout\sounds\blowout_hit_1.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_hit2
+	{
+		name = "NS blowout_begin";
+		sound[] = {"scripts\blowout\sounds\blowout_hit_2.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_hit3
+	{
+		name = "NS blowout_begin";
+		sound[] = {"scripts\blowout\sounds\blowout_hit_3.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_wave1
+	{
+		name = "NS blowout_begin";
+		sound[] = {"scripts\blowout\sounds\blowout_wave_1.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_wave2
+	{
+		name = "NS blowout_begin";
+		sound[] = {"scripts\blowout\sounds\blowout_wave_2.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_wave3
+	{
+		name = "NS blowout_begin";
+		sound[] = {"scripts\blowout\sounds\blowout_wave_3.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_psi
+	{
+		name = "NS blowout_psi";
+		sound[] = {"scripts\blowout\sounds\blowout_psy_voices.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class bl_full
+	{
+		name = "NS blowout_full";
+		sound[] = {"scripts\blowout\sounds\blowout_full_wave.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class bl_detect
+	{
+		name = "NS blowout_detect";
+		sound[] = {"scripts\blowout\sounds\blowout_detect.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class apsi_on
+	{
+		name = "NS apsi_on";
+		sound[] = {"scripts\blowout\sounds\apsi_start.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class apsi_off
+	{
+		name = "NS apsi_off";
+		sound[] = {"scripts\blowout\sounds\apsi_off.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class ns_fx_misc4
+	{
+		name = "Misc strange wind";
+		sound[] = {"scripts\blowout\sounds\fx_misc4.ogg",1.0,1.0};
+		titles[] = {};
+	};
+	class ns_fx_drone1
+	{
+		name = "Drone 1";
+		sound[] = {"scripts\blowout\sounds\fx_drone1.ogg",1.0,1.0};
+		titles[] = {};
+	};
+	class ns_fx_drone2
+	{
+		name = "Drone 2";
+		sound[] = {"scripts\blowout\sounds\fx_drone2.ogg",1.0,1.0};
+		titles[] = {};
+	};
+	class z_wzombie1 {
+		name = "";
+		sound[] = {"sounds\femalezombie_attack_04.ogg",0.3,1,40};
+		titles[] = {0, ""};
+	};
+	
+	class z_wzombie2 : z_wzombie1 {
+		sound[] = {"sounds\femalezombie_spotted_01.ogg",0.3,1,40};
+	};
+	class drink_water
+	{
+		name="drink_water";
+		sound[]={sounds\drink_water.ogg,1,1};
+		titles[] = {};
+	};
+	class nitro  {
+		 name="nitro";
+		 sound[]={sounds\nitro.ogg,0.9,1};
+		 titles[] = {};
+	};
+	class siren
+    {
+		name="siren";
+		sound[]={sounds\siren.ogg,0.9,1};
+		titles[] = {};
+	};
+};
+//DZGM
+#include "scripts\dzgm\groupManagement.hpp"
+// Epoch Admin Tools
+#include "admintools\dialog.hpp"
+//ESS
+#include "scripts\spawn\defines.hpp"
+#include "scripts\spawn\class.hpp"
+#include "scripts\spawn\halo.hpp"
+#include "scripts\spawn\spawn.hpp"
+//Snap Build
+#include "scripts\snap_pro\snappoints.hpp"
+//multi character select
+#include "RscDisplayCharacterSelect.hpp"
+//Config based traders
+#include "CfgServerTrader\cfgServerTrader.hpp"
+//Alchemy Building
+#include "scripts\Buildables\MT_Defines.hpp"
+#include "scripts\Buildables\Crafting_Dialogs.hpp"
+

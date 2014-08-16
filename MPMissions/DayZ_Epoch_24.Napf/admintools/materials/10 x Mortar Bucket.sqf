@@ -1,0 +1,11 @@
+GearAdd = (vehicle player);
+GearAdd addMagazine 'MortarBucket';
+GearAdd addMagazine 'MortarBucket';
+GearAdd addMagazine 'MortarBucket';
+GearAdd addMagazine 'MortarBucket';
+GearAdd addMagazine 'MortarBucket';
+GearAdd addMagazine 'MortarBucket';
+GearAdd addMagazine 'MortarBucket';
+GearAdd addMagazine 'MortarBucket';
+GearAdd addMagazine 'MortarBucket';
+GearAdd addMagazine 'MortarBucket';

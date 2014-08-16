@@ -1,0 +1,11 @@
+GearAdd = (vehicle player);
+GearAdd addMagazine 'CinderBlocks';
+GearAdd addMagazine 'CinderBlocks';
+GearAdd addMagazine 'CinderBlocks';
+GearAdd addMagazine 'CinderBlocks';
+GearAdd addMagazine 'CinderBlocks';
+GearAdd addMagazine 'CinderBlocks';
+GearAdd addMagazine 'CinderBlocks';
+GearAdd addMagazine 'CinderBlocks';
+GearAdd addMagazine 'CinderBlocks';
+GearAdd addMagazine 'CinderBlocks';
