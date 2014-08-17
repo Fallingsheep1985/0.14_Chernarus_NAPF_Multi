@@ -72,6 +72,7 @@ _waitScript =  [] spawn {
 	};
 };
 
+
 _isPZombie = player isKindOf "PZombie_VB";
 #include "class.sqf"
 statusSelect = 0;
@@ -85,8 +86,9 @@ closeDialog 0;
 terminate _waitScript;
 {_x hideObject false;} count hidePlayers;
 hidePlayers = [];
-_dragee = [10153.301,-4593.061,0] nearEntities ["Survivor1_DZ",10];
+_dragee = [-7245.377,19535.367,0] nearEntities ["Survivor1_DZ",10];
 {if (!isNull _x) then {deleteVehicle _x;};} count _dragee;
+player_zombieCheck = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_zombieCheck.sqf";
 fnc_usec_damageHandler = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_damageHandler.sqf";
 cutText ["","BLACK IN"];
 
@@ -94,18 +96,16 @@ if (spawnSelect == 40) exitWith {
 	_donorUID = (getPlayerUID player);
 	{if (_donorUID == _x) then {_donorBase = _forEachIndex;};} forEach donorListBase;
 	_position = donorListBases select _donorBase;
-	if (haloSelect == 1) then {player setPos [
-	_position select 0,_position select 1,1000];
-	player setvelocity [0,120*0.8,0];
-	player setdir 0;
-	[player, 1000] execVM "fixes\fn_HALO.sqf";
-} else {
-	player setPos _position; 
-	player setvelocity [0,120*0.8,0];
-	player setdir 0;};
-	[player, 1000] execVM "fixes\fn_HALO.sqf";
+	if (haloSelect == 1) then {player setPosATL [_position select 0,_position select 1,500];[player,500] spawn BIS_fnc_halo;} else {player setPosATL _position;};
 };
-if (spawnSelect == 41) then {spawnSelect = floor (random 15)};
+_pos1 = (player getPos);
+//halo spawn fix attempt 9000
+if (haloSelect == 1) then {
+player setPosATL _pos1;
+[player,500] spawn BIS_fnc_halo;
+};
+
+if (spawnSelect == 41) then {spawnSelect = floor (random 23)};
 
 _seldLoc = locArray select spawnSelect;
 _seldRandom = _seldLoc call BIS_fnc_selectRandom;
@@ -121,14 +121,12 @@ while {_findSpot && _counter < 20} do {
 	if (!_isNear && !_isZero) then {_findSpot = false};
 };
 _position = [_position select 0,_position select 1,0];
+if (haloSelect == 1) then {player setPosATL [_position select 0,_position select 1,500];[player,500] spawn BIS_fnc_halo;} else {player setPosATL _position;};
+_pos2 = (player getPos);
+
+//halo spawn fix attempt 9000
+sleep 1;
 if (haloSelect == 1) then {
-	player setPos [_position select 0,_position select 1,1000];
-	player setvelocity [0,120*0.8,0];
-	player setdir 0;
-	[player, 1000] execVM "fixes\fn_HALO.sqf";
-} else {
-	player setPos _position; 
-	player setvelocity [0,120*0.8,0];
-	player setdir 0;
-	[player, 1000] execVM "fixes\fn_HALO.sqf";
+player setPosATL _pos2;
+[player,500] spawn BIS_fnc_halo;
 };
