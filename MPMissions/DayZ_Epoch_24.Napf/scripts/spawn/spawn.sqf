@@ -94,8 +94,7 @@ if (spawnSelect == 40) exitWith {
 	_donorUID = (getPlayerUID player);
 	{if (_donorUID == _x) then {_donorBase = _forEachIndex;};} forEach donorListBase;
 	_position = donorListBases select _donorBase;
-	if (haloSelect == 1) then {player setPosATL [_position select 0,_position select 1,1000];[player, 1000] execVM "fixes\fn_HALO.sqf";} else {player setPosATL _position; player setvelocity [0,120*0.8,0];
-player setdir 0;};
+	if (haloSelect == 1) then {player setPosATL [_position select 0,_position select 1,1000];[player, 1000] execVM "fixes\fn_HALO.sqf";} else {player setPosATL _position;};
 };
 if (spawnSelect == 41) then {spawnSelect = floor (random 15)};
 
@@ -113,5 +112,4 @@ while {_findSpot && _counter < 20} do {
 	if (!_isNear && !_isZero) then {_findSpot = false};
 };
 _position = [_position select 0,_position select 1,0];
-if (haloSelect == 1) then {player setPosATL [_position select 0,_position select 1,1000];[player, 1000] execVM "fixes\fn_HALO.sqf";} else {player setPosATL _position; player setvelocity [0,120*0.8,0];
-player setdir 0;};
+if (haloSelect == 1) then {player setPosATL [_position select 0,_position select 1,1000];[player, 1000] execVM "fixes\fn_HALO.sqf";} else {player setPosATL _position;};
