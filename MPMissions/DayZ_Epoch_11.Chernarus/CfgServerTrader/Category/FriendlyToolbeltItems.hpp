@@ -1,4 +1,9 @@
 class Category_679 {
+	class ItemRadio {
+		type = "trade_items";
+		buy[] = {2,"ItemGoldBar10oz"};
+		sell[] = {1,"ItemGoldBar10oz"};
+	};
 	class ItemCompass {
 		type = "trade_weapons";
 		buy[] = {6,"ItemSilverBar"};
@@ -86,6 +91,11 @@ class Category_679 {
 	};
 };
 class Category_681 {
+	class ItemRadio {
+		type = "trade_items";
+		buy[] = {2,"ItemGoldBar10oz"};
+		sell[] = {1,"ItemGoldBar10oz"};
+	};
 	class ItemCompass {
 		type = "trade_weapons";
 		buy[] = {6,"ItemSilverBar"};
@@ -173,6 +183,11 @@ class Category_681 {
 	};
 };
 class Category_532 {
+	class ItemRadio {
+		type = "trade_items";
+		buy[] = {2,"ItemGoldBar10oz"};
+		sell[] = {1,"ItemGoldBar10oz"};
+	};
 	class ItemCompass {
 		type = "trade_weapons";
 		buy[] = {6,"ItemSilverBar"};

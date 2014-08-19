@@ -31,7 +31,7 @@ class Category_519 {
 	};
 	class BAF_Merlin_DZE {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemBriefcase100oz"};
-		sell[] = {1,"ItemBriefcase100oz"};
+		buy[] = {4,"ItemBriefcase100oz"};
+		sell[] = {2,"ItemBriefcase100oz"};
 	};
 };

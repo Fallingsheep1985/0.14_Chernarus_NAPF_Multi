@@ -26,7 +26,7 @@ menu_Profiteer4 = [
 ];
 // General Store
 menu_Rita_Ensler_EP1 = [
-	[["Backpacks",496],["Clothes",497],["Cooked Meats",580],["Drinks",498],["Packaged Food",579],["Gems",900]],
+	[["Backpacks",496],["Clothes",497],["Cooked Meats",580],["Drinks",498],["Packaged Food",579]],
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"neutral"
 ];
@@ -44,7 +44,7 @@ menu_CIV_EuroMan02_EP1 = [
 ];
 // Neutral Building/Parts
 menu_TK_GUE_Soldier_5_EP1 = [
-	[["Building Supplies",508],["Toolbelt Items",510],["Vehicle Parts",509]],
+	[["Building Supplies",508],["Toolbelt Items",510],["Vehicle Parts",509],["Gems",951]],
 	[],
 	"neutral"
 ];
@@ -68,7 +68,7 @@ menu_Worker3 = [
 ];
 // Friendly Building/Parts
 menu_Woodlander1 = [
-	[["Building Supplies",530],["Toolbelt Items",532],["Vehicle Parts",531]],
+	[["Building Supplies",530],["Toolbelt Items",532],["Vehicle Parts",531],["Gems",951]],
 	[],
 	"friendly"
 ];
@@ -80,7 +80,7 @@ menu_UN_CDF_Soldier_Pilot_EP1 = [
 ];
 // General Store 2
 menu_RU_WorkWoman1 = [
-	[["Backpacks",538],["Clothes",628],["Cooked Meats",630],["Drinks",601],["Packaged Food",629],["Gems",900]],
+	[["Backpacks",538],["Clothes",628],["Cooked Meats",630],["Drinks",601],["Packaged Food",629]],
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"friendly"
 ];
@@ -98,7 +98,7 @@ menu_RU_Citizen4 = [
 ];
 // General Store 3
 menu_RU_WorkWoman5 = [
-	[["Backpacks",632],["Clothes",631],["Cooked Meats",634],["Drinks",633],["Packaged Food",635],["Gems",900]],
+	[["Backpacks",632],["Clothes",631],["Cooked Meats",634],["Drinks",633],["Packaged Food",635]],
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"neutral"
 ];
@@ -134,7 +134,7 @@ menu_RU_Profiteer4 = [
 ];
 // Neutral Building/Parts
 menu_Woodlander3 = [
-	[["Building Supplies",662],["Toolbelt Items",663],["Vehicle Parts",664]],
+	[["Building Supplies",662],["Toolbelt Items",663],["Vehicle Parts",664],["Gems",951]],
 	[],
 	"neutral"
 ];

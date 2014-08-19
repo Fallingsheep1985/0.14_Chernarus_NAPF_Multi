@@ -1,4 +1,4 @@
-class Category_901 {
+class Category_950 {
 	class ItemKiloHemp {
 		type = "trade_items";
 		buy[] = {6,"ItemGoldBar10oz"};

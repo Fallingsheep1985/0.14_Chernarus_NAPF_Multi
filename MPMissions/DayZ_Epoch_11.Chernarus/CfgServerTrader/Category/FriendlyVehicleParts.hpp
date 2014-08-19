@@ -44,6 +44,11 @@ class Category_677 {
 		buy[] = {2,"ItemGoldBar"};
 		sell[] = {1,"ItemGoldBar"};
 	};
+	class ItemFuelBarrelEmpty {
+		type = "trade_items";
+		buy[] = {6,"ItemSilverBar10oz"};
+		sell[] = {3,"ItemSilverBar10oz"};
+	};
 };
 class Category_682 {
 	class ItemJerrycan {
@@ -91,6 +96,11 @@ class Category_682 {
 		buy[] = {2,"ItemGoldBar"};
 		sell[] = {1,"ItemGoldBar"};
 	};
+	class ItemFuelBarrelEmpty {
+		type = "trade_items";
+		buy[] = {6,"ItemSilverBar10oz"};
+		sell[] = {3,"ItemSilverBar10oz"};
+	};
 };
 class Category_531 {
 	class ItemJerrycan {
@@ -137,5 +147,10 @@ class Category_531 {
 		type = "trade_items";
 		buy[] = {2,"ItemGoldBar"};
 		sell[] = {1,"ItemGoldBar"};
+	};
+	class ItemFuelBarrelEmpty {
+		type = "trade_items";
+		buy[] = {6,"ItemSilverBar10oz"};
+		sell[] = {3,"ItemSilverBar10oz"};
 	};
 };

@@ -1,4 +1,3 @@
-server_name = "0.14 - Dam you Steam";
 
 execVM "admintools\AdminList.sqf";
 execVM "scriptcontrol.sqf";
