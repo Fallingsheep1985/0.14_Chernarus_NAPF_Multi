@@ -494,7 +494,32 @@ MF_Tow_Towable_Array =
 
 //TowingTractor
 		case "TowingTractor": 			{_array = ["LandVehicle"];};     };
-	
+//Overpoch_BASE
+		case "Civcar": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};	
+		case "Civcarbu": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "civcarbl": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "Civcarre": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "Civcarge": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "Civcarwh": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "Civcarsl": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "Copcar": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};	
+		case "Copcarhw": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "Copcarswat": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_red": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_kiwi": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_black": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_silver	": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};	
+		case "350z_green": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};	
+		case "350z_blue": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};	
+		case "350z_gold": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};
+		case "350z_white": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_pink": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_mod": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_ruben": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_v": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_city": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};		
+		case "350z_yellow": {_array = ["TowingTractor","GLT_M300_ST","GLT_M300_LT","UAZ_Base","S1203_TK_CIV_EP1","Volha_TK_CIV_Base_EP1","VWGolf","tractor","SkodaBase","Pickup_PK_base","Lada_base","350z_base"];};			
 	_array
 };
 MF_Tow_Animate_Player_Tow_Action =

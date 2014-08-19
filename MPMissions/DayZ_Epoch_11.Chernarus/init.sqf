@@ -252,11 +252,6 @@ if(HeliLiftScript)then{
 if(HeroPerkScript)then{
 	//hero spawn
 	herospawn = compile preprocessFileLineNumbers "scripts\HeroPerks\heroperk.sqf";
-	waitUntil {!isNil ("PVDZE_plr_LoginRecord")};
-	if (dayzPlayerLogin2 select 2) then
-	{
-		player spawn herospawn;
-	};
 };
 if(WalkAmongstDeadScript)then{
 	call compile preprocessFileLineNumbers "scripts\walkamongstthedead\config.sqf";
@@ -293,8 +288,13 @@ call compile preprocessFileLineNumbers "scripts\zombietruck\init.sqf";
 
 espawn = compile preprocessFileLineNumbers "scripts\spawn\spawn.sqf";
 waitUntil {!isNil "PVDZE_plr_LoginRecord"};
-if ((!isDedicated) && (dayzPlayerLogin2 select 2)) then {call espawn;};
+if ((!isDedicated) && (dayzPlayerLogin2 select 2)) then {
 
+call espawn;
+	if(HeroPerkScript)then{
+		player spawn herospawn;
+	};
+};
 //wait before admin script is active
 sleep 15;
 if(adminScript)then{
