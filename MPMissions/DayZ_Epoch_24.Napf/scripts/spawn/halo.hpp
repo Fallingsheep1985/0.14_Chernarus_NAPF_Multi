@@ -42,7 +42,7 @@ class halo_dialog
 		class halo_buttonhalo: e_RscButton
 		{
 			idc = -1;
-			text = "HALO";
+			text = "PARASPAWN";
 			colorText[] = {1,1,1,.9};
 			colorDisabled[] = {0.4,0.4,0.4,0};
 			colorBackground[] = {0.75,0.75,0.75,0.8};
