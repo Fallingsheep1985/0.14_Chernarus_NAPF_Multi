@@ -44,7 +44,7 @@ menu_GUE_Worker2 = [
 ];
 // Neutral Building/Parts
 menu_GUE_Woodlander2 = [
-	[["Building Supplies",508],["Toolbelt Items",510],["Vehicle Parts",509], ["Gems",951]],
+	[["Building Supplies",508],["Toolbelt Items",510],["Vehicle Parts",509],["Gems",951]],
 	[],
 	"neutral"
 ];
@@ -62,7 +62,7 @@ menu_Drake_Light = [
 ];
 // Vehicles Neutral
 menu_GUE_Woodlander3 = [
-	[["Bikes and ATV",587],["Buses and Vans",588],["Cargo Trucks",586],["Fuel Trucks",589],["Military Unarmed",598],["Trucks",590],["Used Cars",520],["Utility Vehicles",591]],
+	[["Bikes and ATV",587],["Buses and Vans",588],["Cargo Trucks",586],["Fuel Trucks",589],["Military Unarmed",598],["Trucks",590],["Used Cars",520],["Utility Vehicles",591],["Sport Cars",919],["Super Cars",920]],
 	[],
 	"neutral"
 ];
@@ -74,7 +74,7 @@ menu_Soldier_GL_PMC = [
 ];
 // Friendly Building/Parts
 menu_GUE_Villager3 = [
-	[["Building Supplies",530],["Toolbelt Items",532],["Vehicle Parts",531]],
+	[["Building Supplies",530],["Toolbelt Items",532],["Vehicle Parts",531],["Gems",951]],
 	[],
 	"friendly"
 ];
@@ -134,7 +134,7 @@ menu_Ins_Worker2 = [
 ];
 // Neutral Building/Parts
 menu_Ins_Woodlander3 = [
-	[["Building Supplies",662],["Toolbelt Items",663],["Vehicle Parts",664]],
+	[["Building Supplies",662],["Toolbelt Items",663],["Vehicle Parts",664],["Gems",951]],
 	[],
 	"neutral"
 ];
