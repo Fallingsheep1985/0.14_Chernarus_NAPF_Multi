@@ -50,6 +50,7 @@ BTC_get_liftable_array =
 		case "Mi17_Civilian_DZ": {_array = ["LandVehicle"];};
 		case "Mi17_DZ"         : {_array = ["LandVehicle"];};
 		case "Mi17_DZE"        : {_array = ["LandVehicle"];};
+		case "CH53_DZE"        : {_array = ["LandVehicle"];};
 	};
 	_array
 };
