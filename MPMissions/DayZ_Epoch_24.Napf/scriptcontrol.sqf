@@ -2,7 +2,7 @@
 
 
 //Overpoch on (modifies loot and traders to seel/spawn overwatch items)
-Overpoch = true;
+Overpoch = false;
 
 
 //Admintools
