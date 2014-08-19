@@ -126,7 +126,11 @@ progressLoadingScreen 1.0;
 
 
 if (isServer) then {
+if(Overpoch)then{
+	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\dynamic_vehicle_overpoch.sqf";
+}else{
 	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\dynamic_vehicle.sqf";
+};
 	//Compile vehicle configs
 	ChernarusMap = true;
 	// Add trader citys

@@ -127,7 +127,11 @@ progressLoadingScreen 1.0;
 
 
 if (isServer) then {
+if(Overpoch)then{
+	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\dynamic_vehicle_overpoch.sqf";
+}else{
 	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\dynamic_vehicle.sqf";
+};
 	//Compile vehicle configs
 	NapfMap = true;
 	// Add trader citys
