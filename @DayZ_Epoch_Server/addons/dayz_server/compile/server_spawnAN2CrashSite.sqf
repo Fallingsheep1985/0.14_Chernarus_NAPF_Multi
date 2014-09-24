@@ -17,7 +17,7 @@ _fadeFire	= _this select 8;
 
 //var fixes
 _itemType = 1;
-dayz_serverobjectmonitor = dayz_serverobjectmonitor;
+pvdze_serverobjectmonitor = pvdze_serverobjectmonitor;
 
 if(count _this > 9) then {
 	_useStatic = _this select 9;
@@ -215,7 +215,7 @@ while {true} do {
 		//_crash setDir _dir;
 
 		// I don't think this is needed (you can't get "in" a crash), but it was in the original DayZ Crash logic
-		dayz_serverObjectMonitor set [count dayz_serverObjectMonitor,_crash];
+		pvdze_serverobjectmonitor set [count pvdze_serverobjectmonitor,_crash];
 
 		_crash setVariable ["ObjectID",1,true];
 
